@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #292727;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+
+        a {
+            color: #0077b5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 data-testid="slackUserName">Slack Name: Ogooluwa Oladimeji</h1>
+    <img src="/image/slack-img.jfif" alt="Ogooluwa Oladimeji" data-testid="slackDisplayImage">
+    <p data-testid="currentDayOfTheWeek">Current Day of the Week: <span id="dayOfWeek"></span></p>
+    <p data-testid="currentUTCTime">Current UTC Time: <span id="utcTime"></span></p>
+    <p data-testid="myTrack">Track: Frontend</p>
+    <p data-testid="githubURL">
+        GitHub URL: <a href="https://github.com/Ogooluwakiitan/Hng-Stage-one-Task.git">Stage-one-Task</a>
+    </p>
+
+    <script>
+        function updateDayOfWeek() {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const currentDate = new Date();
+            const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
+            document.getElementById('dayOfWeek').textContent = dayOfWeek;
+        }
+
+        function updateUTC() {
+            const currentTime = new Date().getTime();
+            document.getElementById('utcTime').textContent = currentTime;
+        }
+
+
+        updateDayOfWeek();
+        updateUTC();
+
+        setInterval(updateUTC, 1000);
+    </script>
+</body>
+
+</html>
