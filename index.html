@@ -41,8 +41,8 @@
 <body>
     <h1 data-testid="slackUserName"> Ogooluwa Oladimeji</h1>
     <img src="img.PNG" alt="Ogooluwa Oladimeji" data-testid="slackDisplayImage">
-    <p data-testid="currentDayOfTheWeek"> <span id="dayOfWeek"></span></p>
-    <p data-testid="currentUTCTime"> <span id="utcTime"></span> </p>
+    <p data-testid="currentDayOfTheWeek"></p>
+    <p data-testid="currentUTCTime"> </p>
     <p data-testid="myTrack"> Frontend</p>
     <p data-testid="githubURL">
         <a target="_blank" href="https://github.com/Ogooluwakiitan/Hng-Stage-one-Task.git">Github URL</a>
@@ -53,12 +53,12 @@
             const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             let currentDate = new Date();
             const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
-            document.getElementById('dayOfWeek').textContent = dayOfWeek;
+            document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = dayOfWeek;
         }
 
         function updateUTC() {
             let currentTime = new Date().getTime();
-            document.getElementById('utcTime').innerHTML = currentTime;
+            document.querySelector('[data-testid="currentUTCTime"]').innerHTML = currentTime;
         }
 
 
