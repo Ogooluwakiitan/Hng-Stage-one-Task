@@ -42,23 +42,23 @@
     <h1 data-testid="slackUserName">Slack Name: Ogooluwa Oladimeji</h1>
     <img src="img.PNG" alt="Ogooluwa Oladimeji" data-testid="slackDisplayImage">
     <p data-testid="currentDayOfTheWeek">Date: <span id="dayOfWeek"></span></p>
-    <p data-testid="currentUTCTime">Time: <span id="utcTime"></span> milliseconds timestamp</p>
+    <p data-testid="currentUTCTime">Time: <span id="utcTime"></span> </p>
     <p data-testid="myTrack">Track: Frontend</p>
     <p data-testid="githubURL">
-        GitHub URL: <a href="https://github.com/Ogooluwakiitan/Hng-Stage-one-Task.git">Stage-one-Task</a>
+        GitHub URL: <a  target="_blank" href="https://github.com/Ogooluwakiitan/Hng-Stage-one-Task.git">Stage-one-Task</a>
     </p>
 
     <script>
         function updateDayOfWeek() {
             const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const currentDate = new Date();
+            let currentDate = new Date();
             const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
             document.getElementById('dayOfWeek').textContent = dayOfWeek;
         }
 
         function updateUTC() {
-            const currentTime = new Date().getTime();
-            document.getElementById('utcTime').textContent = currentTime;
+            let currentTime = new Date().getTime();
+            document.getElementById('utcTime').innerHTML = currentTime;
         }
 
 
